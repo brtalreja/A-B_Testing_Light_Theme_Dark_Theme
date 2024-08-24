@@ -29,7 +29,10 @@ figure.show()
 
 figure.write_image('../output/Click_through_rate_vs_Conversion_rate.png')
 
-#Histogram
+#COMMENTS:
+
+
+#Click Through Rate Histogram
 light_theme_data = data[data['Theme'] == 'Light Theme']
 dark_theme_data = data[data['Theme'] == 'Dark Theme']
 
@@ -48,4 +51,25 @@ figure.update_layout(
 
 figure.show()
 
-figure.write_html('../output/Click_Through_Rate_by_Theme')
+figure.write_image('../output/Click_Through_Rate_by_Theme.png')
+
+#COMMENTS:
+
+#Conversion Rate Histogram
+
+figure = go.Figure()
+
+figure.add_trace(go.Histogram(x=light_theme_data['Conversion Rate'], name='Light Theme', opacity=0.6, nbinsx=20))
+figure.add_trace(go.Histogram(x=dark_theme_data['Conversion Rate'], name='Dark Theme', opacity=0.6, nbinsx=20))
+
+figure.update_layout(
+    title_text='Conversion Rate by Theme',
+    xaxis_title_text='Conversion Rate',
+    yaxis_title_text='Frequency',
+    barmode='group',
+    bargap=0.1
+)
+
+figure.show()
+
+figure.write_image('../output/Conversion_Rate_by_Theme.png')
