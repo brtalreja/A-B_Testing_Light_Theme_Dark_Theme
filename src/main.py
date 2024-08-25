@@ -73,3 +73,38 @@ figure.update_layout(
 figure.show()
 
 figure.write_image('../output/Conversion_Rate_by_Theme.png')
+
+#COMMENT:
+
+#Bounce Rate
+
+figure = go.Figure()
+figure.add_trace(go.Box(y=light_theme_data['Bounce Rate'], name='Light Theme'))
+figure.add_trace(go.Box(y=dark_theme_data['Bounce Rate'], name='Dark Theme'))
+
+figure.update_layout(
+    title_text='Bounce Rate by Theme',
+    yaxis_title_text='Bounce Rate',
+)
+
+figure.show()
+
+figure.write_image('../output/Bounce_Rate_by_Theme.png')
+
+#COMMENT:
+
+#Scroll Depth Rate
+figure = go.Figure()
+figure.add_trace(go.Box(y=light_theme_data['Scroll_Depth'], name='Light Theme'))
+figure.add_trace(go.Box(y=dark_theme_data['Scroll_Depth'], name='Dark Theme'))
+
+figure.update_layout(
+    title_text='Scroll Depth by Theme',
+    yaxis_title_text='Scroll Depth',
+)
+
+figure.show()
+
+figure.write_image('../output/Scroll_Depth_Rate_by_Theme.png')
+
+#COMMENT:
