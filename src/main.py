@@ -145,3 +145,5 @@ print("Dark Theme Average Session Duration:", dark_theme_avg_duration)
 # Perform two-sample t-test for session duration
 tstat, pval = stats.ttest_ind(light_theme_session_duration, dark_theme_session_duration)
 print("A/B Testing for Session Duration - t-statistic:", tstat, " p-value:", pval)
+
+#COMMENT:
