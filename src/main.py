@@ -108,3 +108,40 @@ figure.show()
 figure.write_image('../output/Scroll_Depth_Rate_by_Theme.png')
 
 #COMMENT:
+
+#A/B testing for Purchases
+light_theme_conversions = light_theme_data[light_theme_data['Purchases'] == 'Yes'].shape[0]
+light_theme_total = light_theme_data.shape[0]
+
+dark_theme_conversions = dark_theme_data[dark_theme_data['Purchases'] == 'Yes'].shape[0]
+dark_theme_total = dark_theme_data.shape[0]
+
+conversion_counts = [light_theme_conversions, dark_theme_conversions]
+sample_sizes = [light_theme_total, dark_theme_total]
+
+light_theme_conversion_rate = light_theme_conversions / light_theme_total
+dark_theme_conversion_rate = dark_theme_conversions / dark_theme_total
+
+#Perform two-sample proportion test
+zstat, pval = proportions_ztest(conversion_counts, sample_sizes)
+print("Light Theme Conversion Rate:", light_theme_conversion_rate)
+print("Dark Theme Conversion Rate:", dark_theme_conversion_rate)
+print("A/B Testing - z-statistic:", zstat, " p-value:", pval)
+
+#COMMENT:
+
+#A/B testing for Session Duration
+light_theme_session_duration = light_theme_data['Session_Duration']
+dark_theme_session_duration = dark_theme_data['Session_Duration']
+
+# Calculate the average session duration for both themes
+light_theme_avg_duration = light_theme_session_duration.mean()
+dark_theme_avg_duration = dark_theme_session_duration.mean()
+
+# Print the average session duration for both themes
+print("Light Theme Average Session Duration:", light_theme_avg_duration)
+print("Dark Theme Average Session Duration:", dark_theme_avg_duration)
+
+# Perform two-sample t-test for session duration
+tstat, pval = stats.ttest_ind(light_theme_session_duration, dark_theme_session_duration)
+print("A/B Testing for Session Duration - t-statistic:", tstat, " p-value:", pval)
