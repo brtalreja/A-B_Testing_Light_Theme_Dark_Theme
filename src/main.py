@@ -18,6 +18,24 @@ print(data.describe())
 
 #Exploratory Data Analysis
 
+#Correlation matrix
+correlation_matrix = data.corr()
+figure = px.imshow(correlation_matrix, 
+                   title="Correlation Matrix", 
+                   labels=dict(color="Correlation"))
+
+figure.show()
+
+figure.write_image('../output/Correlation_Matrix.png')
+
+#COMMENT:
+
+#Outlier detection using Z-Scores
+z_scores = stats.zscore(data[['Bounce Rate', 'Session_Duration', 'Scroll_Depth']])
+outliers = (abs(z_scores) > 3).sum(axis=0)
+print("Number of Outliers per Feature:", outliers)
+
+#Click Through Rate vs Conversion Rate
 figure = px.scatter(data,
                     x = 'Click Through Rate',
                     y = 'Conversion Rate',
@@ -30,7 +48,6 @@ figure.show()
 figure.write_image('../output/Click_through_rate_vs_Conversion_rate.png')
 
 #COMMENTS:
-
 
 #Click Through Rate Histogram
 light_theme_data = data[data['Theme'] == 'Light Theme']
@@ -56,7 +73,6 @@ figure.write_image('../output/Click_Through_Rate_by_Theme.png')
 #COMMENTS:
 
 #Conversion Rate Histogram
-
 figure = go.Figure()
 
 figure.add_trace(go.Histogram(x=light_theme_data['Conversion Rate'], name='Light Theme', opacity=0.6, nbinsx=20))
@@ -77,7 +93,6 @@ figure.write_image('../output/Conversion_Rate_by_Theme.png')
 #COMMENT:
 
 #Bounce Rate
-
 figure = go.Figure()
 figure.add_trace(go.Box(y=light_theme_data['Bounce Rate'], name='Light Theme'))
 figure.add_trace(go.Box(y=dark_theme_data['Bounce Rate'], name='Dark Theme'))
@@ -106,6 +121,10 @@ figure.update_layout(
 figure.show()
 
 figure.write_image('../output/Scroll_Depth_Rate_by_Theme.png')
+
+#Segmented Analysis
+age_data = data.groupby('Age').mean()
+
 
 #COMMENT:
 
