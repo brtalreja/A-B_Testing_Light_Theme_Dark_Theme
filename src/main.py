@@ -4,6 +4,10 @@ import plotly.express as px
 import plotly.graph_objects as go
 from statsmodels.stats.proportion import proportions_ztest
 from scipy import stats
+from scipy.stats import chi2_contingency
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
 
 #Data Load
 data = pd.read_csv("../data/website_ab_test.csv")
@@ -130,17 +134,16 @@ figure.show()
 figure.write_image('../output/Scroll_Depth_Rate_by_Theme.png')
 
 #Segmented Analysis
-age_data = data.groupby('Age').mean()
-location_data = data.groupby('Location_num').mean()
+
+bins = [18, 25, 35, 45, 55, 65, 100]
+labels = ['19-25', '26-35', '36-45', '46-55', '56-65', '66-100']
+data_num['Age_Group'] = pd.cut(data_num['Age'], bins = bins, labels = labels, right = False)
+
+age_data = data_num.groupby('Age_Group').mean()
 
 figure = px.bar(age_data, x = age_data.index, y = 'Conversion Rate', title = 'Conversion Rate by Age Group')
 figure.show()
 figure.write_image('../output/Conversion_rate_by_Age_Group.png')
-
-figure = px.bar(location_data, x = location_data.index, y = 'Purchases_num', title = 'Purchases by Location Group')
-figure.show()
-figure.write_image('../output/Purchases_by_Location_Group.png')
-
 
 #COMMENT:
 
@@ -180,5 +183,12 @@ print("Dark Theme Average Session Duration:", dark_theme_avg_duration)
 # Perform two-sample t-test for session duration
 tstat, pval = stats.ttest_ind(light_theme_session_duration, dark_theme_session_duration)
 print("A/B Testing for Session Duration - t-statistic:", tstat, " p-value:", pval)
+
+#COMMENT:
+
+#Chi-Square test
+contingency_table = pd.crosstab(data['Purchases'], data['Theme'])
+chi2, p, dof, expected = chi2_contingency(contingency_table)
+print('Chi-square test for Purchases vs Theme - chi2:', chi2, 'p-value:', p)
 
 #COMMENT:
