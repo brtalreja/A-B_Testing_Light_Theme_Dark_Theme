@@ -19,7 +19,14 @@ print(data.describe())
 #Exploratory Data Analysis
 
 #Correlation matrix
-correlation_matrix = data.corr()
+data['Theme_num'] = data['Theme'].map({'Light Theme': 0, 'Dark Theme':1})
+data['Location_num'] = data['Location'].map({'Bangalore': 1,'Chennai': 2, 'Kolkata': 3, 'New Delhi': 4, 'Pune':5})
+data['Purchases_num'] = data['Purchases'].map({'No': 0, 'Yes':1})
+data['Added_to_Cart_num'] = data['Added_to_Cart'].map({'No': 0, 'Yes':1})
+
+data_num = data[['Theme_num','Click Through Rate','Conversion Rate','Bounce Rate','Scroll_Depth','Age','Location_num','Session_Duration','Purchases_num','Added_to_Cart_num']]
+
+correlation_matrix = data_num.corr()
 figure = px.imshow(correlation_matrix, 
                    title="Correlation Matrix", 
                    labels=dict(color="Correlation"))
@@ -124,6 +131,15 @@ figure.write_image('../output/Scroll_Depth_Rate_by_Theme.png')
 
 #Segmented Analysis
 age_data = data.groupby('Age').mean()
+location_data = data.groupby('Location_num').mean()
+
+figure = px.bar(age_data, x = age_data.index, y = 'Conversion Rate', title = 'Conversion Rate by Age Group')
+figure.show()
+figure.write_image('../output/Conversion_rate_by_Age_Group.png')
+
+figure = px.bar(location_data, x = location_data.index, y = 'Purchases_num', title = 'Purchases by Location Group')
+figure.show()
+figure.write_image('../output/Purchases_by_Location_Group.png')
 
 
 #COMMENT:
