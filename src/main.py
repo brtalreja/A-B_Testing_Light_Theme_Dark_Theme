@@ -5,9 +5,6 @@ import plotly.graph_objects as go
 from statsmodels.stats.proportion import proportions_ztest
 from scipy import stats
 from scipy.stats import chi2_contingency
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report
 
 #Data Load
 data = pd.read_csv("../data/website_ab_test.csv")
@@ -40,6 +37,9 @@ figure.show()
 figure.write_image('../output/Correlation_Matrix.png')
 
 #COMMENT:
+# The relationship between Scroll_Depth and Session_Duration suggests that engaging content is able to keep users on the site longer.
+# As there is a moderate correlation between Click Through Rate and Conversion Rate variables, there is potential to increase conversions by improving the post-click experience for a user.
+# We can look into analyzing the pages a user lands on after clicking through and optimize them to better align with the user’s intent and streamline the conversion process.
 
 #Outlier detection using Z-Scores
 z_scores = stats.zscore(data[['Bounce Rate', 'Session_Duration', 'Scroll_Depth']])
