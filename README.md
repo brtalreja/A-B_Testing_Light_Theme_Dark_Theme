@@ -12,10 +12,10 @@ This project analyzes website A/B test data to compare user engagement between L
 
 ### 3) Click Through Rate Histogram
 
-### Conversion Rate Histogram
+### 4) Conversion Rate Histogram
 
-### Bounce Rate
+### 5) Bounce Rate
 
-### Scroll Depth Rate
+### 6) Scroll Depth Rate
 
-### Segmented Analysis
+### 7) Segmented Analysis
