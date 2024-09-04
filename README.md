@@ -10,14 +10,22 @@ This project analyzes website A/B test data to compare user engagement between L
 
 ![Correlation Matrix](output/Correlation_Matrix.png)
 
-### 2) Outlier detection using Z-Scores
+### 2) Click Through Rate Histogram:
 
-### 3) Click Through Rate Histogram
+![Correlation Matrix](output/Correlation_Matrix.png)
 
-### 4) Conversion Rate Histogram
+### 3) Conversion Rate Histogram:
 
-### 5) Bounce Rate
+![Correlation Matrix](output/Correlation_Matrix.png)
 
-### 6) Scroll Depth Rate
+### 4) Bounce Rate:
 
-### 7) Segmented Analysis
+![Correlation Matrix](output/Correlation_Matrix.png)
+
+### 5) Scroll Depth Rate:
+
+![Correlation Matrix](output/Correlation_Matrix.png)
+
+### 6) Segmented Analysis:
+
+![Correlation Matrix](output/Correlation_Matrix.png)
