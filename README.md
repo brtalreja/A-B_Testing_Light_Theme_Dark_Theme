@@ -6,7 +6,9 @@ This project analyzes website A/B test data to compare user engagement between L
 
 ## Exploratory Data Analysis (EDA) performed:
 
-### 1) Correlation matrix
+### 1) Correlation matrix:
+
+![Correlation Matrix](output/Correlation_Matrix.png)
 
 ### 2) Outlier detection using Z-Scores
 
