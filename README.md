@@ -20,7 +20,7 @@ This project analyzes website A/B test data to compare user engagement between L
 
 ### 4) Conversion Rate Histogram:
 
-![Correlation Matrix](output/Correlation_Matrix.png)
+![Conversion Rate by Theme.png](output/Conversion_Rate_by_Theme.png)
 
 ### 5) Bounce Rate:
 
