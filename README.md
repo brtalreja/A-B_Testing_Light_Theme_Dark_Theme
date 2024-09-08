@@ -23,6 +23,10 @@ This project analyzes website A/B test data to compare user engagement between L
 
 ### 5) Bounce Rate:
 
+![Bounce Rate by Theme.png](output/Bounce_Rate_by_Theme.png)
+
 ### 6) Scroll Depth Rate:
+
+![Scroll Depth Rate by Theme.png](output/Scroll_Depth_Rate_by_Theme.png)
 
 ### 7) Segmented Analysis:
