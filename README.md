@@ -19,14 +19,16 @@ This project analyzes website A/B test data to compare user engagement between L
 
 ### 4) Conversion Rate Histogram:
 
-![Conversion Rate by Theme.png](output/Conversion_Rate_by_Theme.png)
+![Conversion Rate by Theme](output/Conversion_Rate_by_Theme.png)
 
 ### 5) Bounce Rate:
 
-![Bounce Rate by Theme.png](output/Bounce_Rate_by_Theme.png)
+![Bounce Rate by Theme](output/Bounce_Rate_by_Theme.png)
 
 ### 6) Scroll Depth Rate:
 
-![Scroll Depth Rate by Theme.png](output/Scroll_Depth_Rate_by_Theme.png)
+![Scroll Depth Rate by Theme](output/Scroll_Depth_Rate_by_Theme.png)
 
 ### 7) Segmented Analysis:
+
+![Conversion rate by Age Group](output/Conversion_rate_by_Age_Group.png)
