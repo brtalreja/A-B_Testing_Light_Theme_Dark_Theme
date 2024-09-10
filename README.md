@@ -32,3 +32,7 @@ This project analyzes website A/B test data to compare user engagement between L
 ### 7) Segmented Analysis:
 
 ![Conversion rate by Age Group](output/Conversion_rate_by_Age_Group.png)
+
+## Conclusion
+
+## References
