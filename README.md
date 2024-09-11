@@ -6,31 +6,38 @@ This project analyzes website A/B test data to compare user engagement between L
 
 ## Exploratory Data Analysis (EDA) performed:
 
-### Correlation Matrix: To examine the relationships between various numerical features, such as Session Duration, Conversion Rate, and Bounce Rate.
+### Correlation Matrix:
+- To examine the relationships between various numerical features, such as Session Duration, Conversion Rate, and Bounce Rate.
 
 ![Correlation Matrix](output/Correlation_Matrix.png)
 
-### Click Through Rate vs Conversion Rate: To analyze the relationship between Click Through Rate (CTR) and Conversion Rate across Light and Dark themes.
+### Click Through Rate vs Conversion Rate:
+- To analyze the relationship between Click Through Rate (CTR) and Conversion Rate across Light and Dark themes.
 
 ![Click Through Rate VS Conversion Rate](output/Click_through_rate_vs_Conversion_rate.png)
 
-### Click Through Rate Histogram: To visualize the distribution of Click Through Rates for both Light and Dark themes and compare of engagement levels between the two themes.
+### Click Through Rate Histogram:
+- To visualize the distribution of Click Through Rates for both Light and Dark themes and compare of engagement levels between the two themes.
 
 ![Click Through Rate by Theme](output/Click_Through_Rate_by_Theme.png)
 
-### Conversion Rate Histogram: To compare the Conversion Rates between users exposed to Light and Dark themes and see how different themes affect user conversions.
+### Conversion Rate Histogram:
+- To compare the Conversion Rates between users exposed to Light and Dark themes and see how different themes affect user conversions.
 
 ![Conversion Rate by Theme](output/Conversion_Rate_by_Theme.png)
 
-### Bounce Rate: To compare the Bounce Rate of users between Light and Dark themes, giving an idea of how many users leave the site after viewing one page.
+### Bounce Rate:
+- To compare the Bounce Rate of users between Light and Dark themes, giving an idea of how many users leave the site after viewing one page.
 
 ![Bounce Rate by Theme](output/Bounce_Rate_by_Theme.png)
 
-### Scroll Depth Rate: To visualize the Scroll Depth for users on both Light and Dark themes, revealing how far users are scrolling through the website, which can indicate engagement with the content.
+### Scroll Depth Rate:
+- To visualize the Scroll Depth for users on both Light and Dark themes, revealing how far users are scrolling through the website, which can indicate engagement with the content.
 
 ![Scroll Depth Rate by Theme](output/Scroll_Depth_Rate_by_Theme.png)
 
-### Segmented Analysis: To illustrate how the Conversion Rate varies across different age groups, providing insights into the theme's effectiveness based on the user's age.
+### Segmented Analysis:
+- To illustrate how the Conversion Rate varies across different age groups, providing insights into the theme's effectiveness based on the user's age.
 
 ![Conversion Rate by Age Group](output/Conversion_rate_by_Age_Group.png)
 
