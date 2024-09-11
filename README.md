@@ -43,6 +43,6 @@ This project analyzes website A/B test data to compare user engagement between L
 
 ## Conclusion
 
-The analysis indicates that the theme has a measurable impact on user behavior. Users interacting with the Dark Theme tend to have higher conversion rates and session durations, while the Light Theme shows slightly higher engagement in terms of Click Through Rate. Additional hypothesis testing, such as A/B testing for purchases and session duration, supports these findings.
+This project builds on the foundational work provided in The Clever Programmer's A/B testing on Light Theme vs Dark Theme using Python by expanding the analysis to provide deeper insights into various other aspects of the user behavior. The analysis indicates that the theme has a measurable impact on user behavior. Users interacting with the Dark Theme tend to have higher conversion rates and session durations, while the Light Theme shows slightly higher engagement in terms of Click Through Rate. Additional hypothesis testing, such as A/B testing for purchases and session duration, supports these findings.
 
 ## References
