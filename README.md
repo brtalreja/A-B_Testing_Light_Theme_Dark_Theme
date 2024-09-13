@@ -47,6 +47,7 @@ This project builds on the foundational work provided in The Clever Programmer's
 
 ## References
 
-1. [Project Reference](https://thecleverprogrammer.com/2023/07/24/a-b-testing-of-themes-using-python/)
-2. [Dataset](https://statso.io/light-theme-and-dark-theme-case-study/)
+1. [A/B Testing](https://en.wikipedia.org/wiki/A/B_testing)
+2. [Project Reference](https://thecleverprogrammer.com/2023/07/24/a-b-testing-of-themes-using-python/)
+3. [Dataset](https://statso.io/light-theme-and-dark-theme-case-study/)
 
