@@ -59,6 +59,9 @@ figure.show()
 figure.write_image('../output/Click_through_rate_vs_Conversion_rate.png')
 
 #COMMENTS:
+# The linear trendline is almost flat, suggesting a weak or no strong correlation between CTR and Conversion Rate. This indicates that higher click-through rates do not necessarily lead to higher conversion rates.
+# The linear regression line is relatively flat, which means that overall, there is no clear upward or downward trend linking CTR to Conversion Rate. 
+# This analysis emphasizes that while CTR is an important metric, it may not be the sole determinant of conversion success, and other factors should be examined for a more holistic view of user behavior.
 
 #Click Through Rate Histogram
 light_theme_data = data[data['Theme'] == 'Light Theme']
