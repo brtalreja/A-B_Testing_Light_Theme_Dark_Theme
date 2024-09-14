@@ -85,6 +85,9 @@ figure.show()
 figure.write_image('../output/Click_Through_Rate_by_Theme.png')
 
 #COMMENTS:
+# Both themes have similar distributions across most CTR ranges, with no extreme deviation for either theme, indicating that users interact similarly with both themes in terms of click behavior.
+# The histogram shows that no theme significantly outperforms the other across all CTR ranges, suggesting that the choice of theme (Light vs. Dark) does not have a considerable impact on overall CTR behavior.
+# Since both themes perform similarly, it's crucial to look beyond just the theme to identify other variables contributing to better CTR performance.
 
 #Conversion Rate Histogram
 figure = go.Figure()
@@ -105,6 +108,9 @@ figure.show()
 figure.write_image('../output/Conversion_Rate_by_Theme.png')
 
 #COMMENT:
+# Both themes seem to perform fairly similarly in most conversion rate ranges, with slight variations between them.
+# While the Dark Theme has a slight advantage in lower conversion rates, the Light Theme appears to be performing better overall at the higher conversion rates.
+# Since the Light Theme performs slightly better at higher conversion rates, a focused approach on enhancing user experience for Dark Theme users at these higher levels should be considered.
 
 #Bounce Rate
 figure = go.Figure()
