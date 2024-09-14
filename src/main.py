@@ -36,7 +36,7 @@ figure.show()
 
 figure.write_image('../output/Correlation_Matrix.png')
 
-#COMMENT:
+#COMMENTS:
 # The relationship between Scroll_Depth and Session_Duration suggests that engaging content is able to keep users on the site longer.
 # As there is a moderate correlation between Click Through Rate and Conversion Rate variables, there is potential to increase conversions by improving the post-click experience for a user.
 # We can look into analyzing the pages a user lands on after clicking through and optimize them to better align with the user’s intent and streamline the conversion process.
@@ -107,7 +107,7 @@ figure.show()
 
 figure.write_image('../output/Conversion_Rate_by_Theme.png')
 
-#COMMENT:
+#COMMENTS:
 # Both themes seem to perform fairly similarly in most conversion rate ranges, with slight variations between them.
 # While the Dark Theme has a slight advantage in lower conversion rates, the Light Theme appears to be performing better overall at the higher conversion rates.
 # Since the Light Theme performs slightly better at higher conversion rates, a focused approach on enhancing user experience for Dark Theme users at these higher levels should be considered.
@@ -126,7 +126,10 @@ figure.show()
 
 figure.write_image('../output/Bounce_Rate_by_Theme.png')
 
-#COMMENT:
+#COMMENTS:
+# The median bounce rate for both themes is quite similar, indicating that the typical bounce behavior is comparable regardless of the theme. However, the interquartile range and the whiskers differ between the two themes.
+# The similar medians and ranges imply that theme preference might not have a significant influence on overall bounce rate.
+# The wider variability in the Dark Theme bounce rates suggests that some users disengage more frequently than others and viceversa for the Lighe theme.
 
 #Scroll Depth Rate
 figure = go.Figure()
@@ -142,6 +145,10 @@ figure.show()
 
 figure.write_image('../output/Scroll_Depth_Rate_by_Theme.png')
 
+#COMMENT:
+# The median scroll depth for both themes is quite similar, indicating that users on both themes tend to scroll to roughly the same depth on average.
+# While the Light Theme has a more consistent scroll depth range, with the majority of users clustering around the same area, the Dark Theme users exhibit a wider range of scrolling behavior, suggesting that some users are more engaged while others scroll less before leaving the page.
+
 #Segmented Analysis
 
 bins = [18, 25, 35, 45, 55, 65, 100]
@@ -155,6 +162,9 @@ figure.show()
 figure.write_image('../output/Conversion_rate_by_Age_Group.png')
 
 #COMMENT:
+# The older users (66-100) seem to engage more deeply, which could mean that they find value in the offerings or that the product/service resonates with their needs.
+# There is a drop in conversion for the 26-35 group and it is typically a busy demographic—people are working, managing families, or have other distractions.
+# By optimizing the user experience for mobile devices, providing exclusive promotions or offers can increase engagement.
 
 #A/B testing for Purchases
 light_theme_conversions = light_theme_data[light_theme_data['Purchases'] == 'Yes'].shape[0]
@@ -175,7 +185,10 @@ print("Light Theme Conversion Rate:", light_theme_conversion_rate)
 print("Dark Theme Conversion Rate:", dark_theme_conversion_rate)
 print("A/B Testing - z-statistic:", zstat, " p-value:", pval)
 
-#COMMENT:
+#COMMENTS:
+# The conversion rate for the Light Theme (53.09%) is slightly higher than the Dark Theme (50.39%).
+# However, the difference between the two conversion rates is not statistically significant, as indicated by the p-value of 0.393 (higher than the typical significance threshold of 0.05).
+# This means that we cannot reject the null hypothesis—there is no strong evidence that the Light Theme has a significantly better conversion rate than the Dark Theme.
 
 #A/B testing for Session Duration
 light_theme_session_duration = light_theme_data['Session_Duration']
@@ -193,11 +206,17 @@ print("Dark Theme Average Session Duration:", dark_theme_avg_duration)
 tstat, pval = stats.ttest_ind(light_theme_session_duration, dark_theme_session_duration)
 print("A/B Testing for Session Duration - t-statistic:", tstat, " p-value:", pval)
 
-#COMMENT:
+#COMMENTS:
+# The average session duration for the Light Theme (930.83 seconds) is slightly higher than for the Dark Theme (919.48 seconds).
+# However, this difference is very small and, more importantly, not statistically significant (p-value of 0.724).
+# The high p-value indicates that the differences in session duration between the two themes are likely due to random chance, and the themes don't significantly influence how long users stay on the site.
 
 #Chi-Square test
 contingency_table = pd.crosstab(data['Purchases'], data['Theme'])
 chi2, p, dof, expected = chi2_contingency(contingency_table)
 print('Chi-square test for Purchases vs Theme - chi2:', chi2, 'p-value:', p)
 
-#COMMENT:
+#COMMENTS:
+# The Chi-square test examines the association between theme (Light vs. Dark) and whether users made a purchase.
+# The p-value of 0.430 indicates that there is no significant association between the theme and purchases.
+# Hence, the theme a user interacts with does not significantly affect their likelihood to make a purchase.
